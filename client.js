@@ -17,9 +17,14 @@ const connect = function() {
     host: 'localhost', //'192.168.88.218''localhost'
     port: 50541
   });
+
   conn.on('connect', () => {
     console.log("Successfully connected to game server")
-    console.log("Name: WGW")
+    conn.write("Name: WGW")
+    //setTimeout(() => {
+    //  conn.write("Move: up")
+    //}, 500)
+
   })
 
   conn.on('data', (data) => {
